@@ -1,6 +1,13 @@
 
 public class Calculadora implements Icalculadora{
 	
+	/**
+	* Este es un método que simplemente verifica que los símbolos ingresados son los correctos.
+	*
+	* @param  elementos  es una cadena que ingresa con la operación respectiva
+	* @return      1 o 0, si es 1: indica que es un valor correcto; si es 0: indica que es un valor incorrecto. 
+	*/
+	
 	private int Verificador(String elementos) {
 		int verificador =1; 
 		
@@ -32,6 +39,13 @@ public class Calculadora implements Icalculadora{
 			return 0;
 			}
 	}
+	
+	/**
+	* Este es un método que realiza la operacion de postfix, ingresa un string y retorna un double como resultado de la operacion
+	*
+	* @param  input  es una cadena que ingresa con la operación respectiva
+	* @return      pila.index(0), que es el resultado de la operación respectiva.
+	*/
 
 	@Override
 	public double resolver(String input) {

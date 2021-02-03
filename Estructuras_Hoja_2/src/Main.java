@@ -1,4 +1,9 @@
-
+/**
+	@author Rudik Roberto Rompich Cotzojay
+	@version 1.0 
+	Hoja 2 - Algoritmos y Estrucutras de Datos 
+	Se trabajó individualmente.
+	*/
 import java.io.File; 
 import java.io.FileNotFoundException;  
 import java.util.Scanner; 
@@ -9,14 +14,14 @@ public class Main {
       Calculadora calculadora = new Calculadora();
         try {
         	
-      File myObj = new File("datos.txt");
-      Scanner myReader = new Scanner(myObj);
-      while (myReader.hasNextLine()) {
-        String data = myReader.nextLine();
+      File base = new File("datos.txt");
+      Scanner lector = new Scanner(base);
+      while (lector.hasNextLine()) {
+        String data = lector.nextLine();
         System.out.println(calculadora.resolver(data));
       }
       
-      myReader.close();
+      lector.close();
     } catch (FileNotFoundException e) {
       System.out.println("Un error desconocido ha sido detectado.");
       e.printStackTrace();
