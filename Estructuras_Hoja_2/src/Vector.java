@@ -45,7 +45,7 @@ public class Vector<E> implements Stack<E>{
 		return size() == 0;
 	}
 	
-	public int index(int index) {
-		return (int) data.get(index);
+	public E index(int index) {
+		return data.get(index);
 	}
 }

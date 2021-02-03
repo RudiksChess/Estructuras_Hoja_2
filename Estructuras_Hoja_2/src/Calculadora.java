@@ -45,18 +45,18 @@ public class Calculadora implements Icalculadora{
 		
 		else {
 			
-			for(int i=0; i<input.length();i++) {
-				char e = input.charAt(i);
-				String c=String.valueOf(e);
+			String[] partido =input.split(" ",0);
+			
+			for(int i=0; i<partido.length;i++) {
+				String c=partido[i];
+				boolean isNumeric = c.chars().allMatch( Character::isDigit );
 				
-				if (c.equals("0")  | c.equals("1") | c.equals("2") |
-					c.equals("3")  | c.equals("4") | c.equals("5") |
-					c.equals("6")  | c.equals("7") | c.equals("8") | 	
-					c.equals("9"))   {
-					pila.push(Integer.parseInt(c)) ;		 
+				if (isNumeric== true) {
+					pila.push(Integer.parseInt(c));
 				}
 				
-				else if( c.equals("+")| c.equals("-")|c.equals("*") | c.equals("/") ) {
+				else{
+					
 				int primero= pila.index(i-1);		
 				int segundo= pila.index(i-2);		
 				
@@ -64,22 +64,22 @@ public class Calculadora implements Icalculadora{
 				case "+":
 					pila.pop();
 					pila.pop();
-					pila.push(primero+segundo);
+					pila.push(segundo+primero);
 					break;
 				case "-":
 					pila.pop();
 					pila.pop();
-					pila.push(primero+segundo);
+					pila.push(segundo-primero);
 					break;
 				case "/":
 					pila.pop();
 					pila.pop();
-					pila.push(primero+segundo);
+					pila.push(segundo/primero);
 					break;
 				case "*":
 					pila.pop();
 					pila.pop();
-					pila.push(primero+segundo);
+					pila.push(segundo*primero);
 					break;
 				}
 				
@@ -89,7 +89,7 @@ public class Calculadora implements Icalculadora{
 				
 			}
 			
-			return pila.index(0);
+			return (double) pila.index(0);
 			
 			}
 			
