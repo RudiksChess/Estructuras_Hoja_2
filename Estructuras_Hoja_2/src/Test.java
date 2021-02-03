@@ -4,10 +4,10 @@ class Test {
 
 	@org.junit.jupiter.api.Test
 	void test() {
-			Seguridad test = new Seguridad("+12 44  2*/+");
-			int respuesta = test.Verificador(); 
-			assertEquals(1,respuesta);
+			Calculadora test = new Calculadora();
 			
+			int respuesta = (int) test.resolver("4 1+"); 
+			assertEquals(19,respuesta);
 	}
 
 }
