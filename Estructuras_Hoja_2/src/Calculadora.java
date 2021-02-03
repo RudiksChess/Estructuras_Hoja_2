@@ -57,9 +57,9 @@ public class Calculadora implements Icalculadora{
 				
 				else{
 					
-				int primero= pila.index(i-1);		
-				int segundo= pila.index(i-2);		
-				
+					int primero= pila.index(pila.size()-1);		
+					int segundo= pila.index(pila.size()-2);		
+						
 				switch (c) {
 				case "+":
 					pila.pop();
